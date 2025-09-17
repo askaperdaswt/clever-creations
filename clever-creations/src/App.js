@@ -1,5 +1,7 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductCard from './components/ProductCard';
+import ArtisanLollipops from './components/ArtisanLollipops';
 
 function App() {
   // Array of 30 different candy and treat products
@@ -36,21 +38,26 @@ function App() {
     { icon: "🎭", name: "Mystery Mix", description: "Assorted surprise candies - you never know what you'll get!", price: "$12.50" }
   ];
   return (
-    <div className="App">
-      {/* Navigation Header */}
-      <nav className="navbar">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <h1>🍭 Clever Creations</h1>
-          </div>
-          <ul className="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/lollipops" element={<ArtisanLollipops />} />
+          <Route path="/" element={
+            <>
+              {/* Navigation Header */}
+              <nav className="navbar">
+                <div className="nav-container">
+                  <div className="nav-logo">
+                    <h1>🍭 Clever Creations</h1>
+                  </div>
+                  <ul className="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                  </ul>
+                </div>
+              </nav>
 
       {/* Hero Section */}
       <section className="hero" id="home">
@@ -152,7 +159,11 @@ function App() {
           </div>
         </div>
       </footer>
-    </div>
+            </>
+          } />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -71,3 +71,57 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # proj1
 # proj1
 # proj1
+# Contributing Guidelines for Our Project
+
+Welcome to the project! To keep the site stable and ensure smooth merges, please follow these guidelines when working on your features.
+
+---
+
+## 1. Work on Separate Branches
+
+- Always create a **new branch** from `main` before starting your work:
+
+  ```bash
+  git checkout main
+  git pull origin main
+  git checkout -b yourname-feature
+Avoid working directly on the main branch.
+
+2. Add New Pages Without Impacting Existing Ones
+When adding a new page, create a new file in the appropriate folder (e.g., pages/ or src/pages/).
+
+Do not modify existing pages unless necessary.
+
+Ensure your page/component is self-contained and does not alter shared layout files or global styles that affect other pages.
+
+3. Test Your Changes Locally
+Run the site locally (instructions here if needed) to make sure your page works.
+
+Verify that existing pages still function correctly.
+
+4. Keep Commits Focused and Clear
+Commit only related changes in a branch.
+
+Write clear commit messages explaining the purpose of your changes.
+
+5. Pull the Latest main Regularly
+Before merging or opening a pull request (PR), pull the latest changes from main and resolve any conflicts:
+
+bash
+Copy code
+git checkout yourname-feature
+git pull origin main
+This keeps your branch up to date.
+
+6. Submit Pull Requests (PRs) for Review
+Open a PR to merge your feature branch into main.
+
+Include a description of what you changed.
+
+Avoid large, unrelated changes in a single PR.
+
+7. Avoid Changing Shared Files Unless Necessary
+If you must modify global styles, layout, or config files, coordinate with the team first.
+
+Small, isolated changes reduce conflicts and bugs.
+

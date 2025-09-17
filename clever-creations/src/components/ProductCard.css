@@ -56,3 +56,33 @@
   border-radius: 20px;
   display: inline-block;
 }
+
+/* Clickable product card styles */
+.product-card.clickable {
+  cursor: pointer;
+  position: relative;
+}
+
+.product-card.clickable:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(255, 107, 107, 0.3);
+}
+
+.click-hint {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #ff6b6b, #ff9a9e);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

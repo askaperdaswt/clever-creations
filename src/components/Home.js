@@ -10,8 +10,7 @@ const Home = ({ products }) => {
           <h1 className="hero-title">Welcome to Clever Creations</h1>
           <p className="hero-subtitle">Where Sweet Dreams Come True</p>
           <p className="hero-description">
-            Discover our magical collection of handcrafted candies, chocolates, and confections
-            made with love and the finest ingredients.
+            From El Salvador, to Vancouver, to Boston and everywhere in between, we use the world's best ingredients to make our treats extra sweet!
           </p>
           <button className="cta-button">Shop Now</button>
         </div>
@@ -28,7 +27,7 @@ const Home = ({ products }) => {
       {/* Featured Products */}
       <section className="featured-products" id="products">
         <div className="container">
-          <h2 className="section-title">Featured Delights</h2>
+          <h2 className="section-title">See what our super sweet team recommends!</h2>
           <div className="product-grid">
             {products.map((product, index) => (
               <ProductCard

@@ -1,47 +1,118 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './components/Home';
 import SweetPage from './components/SweetPage';
 
-function App() {
-  // Array of 30 different candy and treat products
+// Import all person pages
+import AlexGootPage from './pages/AlexGootPage';
+import AliciaJonesPage from './pages/AliciaJonesPage';
+import AmyWildePage from './pages/AmyWildePage';
+import AndrianaSkaperdasPage from './pages/AndrianaSkaperdasPage';
+import AngelaShenPage from './pages/AngelaShenPage';
+import AnnaKozlovaPage from './pages/AnnaKozlovaPage';
+import ArielFinnoPage from './pages/ArielFinnoPage';
+import BerniceMejaPage from './pages/BerniceMejaPage';
+import BobbyNguyenPage from './pages/BobbyNguyenPage';
+import ChelseaJonesPage from './pages/ChelseaJonesPage';
+import DaveDevinePage from './pages/DaveDevinePage';
+import EmilyFirgensPage from './pages/EmilyFirgensPage';
+import EmilyKohlerPage from './pages/EmilyKohlerPage';
+import EmilyPetersonPage from './pages/EmilyPetersonPage';
+import HankThornhillPage from './pages/HankThornhillPage';
+import IanMcDiarmidPage from './pages/IanMcDiarmidPage';
+import JeffreyPraterPage from './pages/JeffreyPraterPage';
+import JenWarePage from './pages/JenWarePage';
+import JennaRayPage from './pages/JennaRayPage';
+import JohnKarayelPage from './pages/JohnKarayelPage';
+import JoseAndersonPage from './pages/JoseAndersonPage';
+import JosiasJimenezPage from './pages/JosiasJimenezPage';
+import JoshAmerPage from './pages/JoshAmerPage';
+import KatieKrolPage from './pages/KatieKrolPage';
+import KatieLeducPage from './pages/KatieLeducPage';
+import KatieLongPage from './pages/KatieLongPage';
+import KristenDukePage from './pages/KristenDukePage';
+import MalekElHagePage from './pages/MalekElHagePage';
+import MelissaGorhamPage from './pages/MelissaGorhamPage';
+import NicolasPadillaPage from './pages/NicolasPadillaPage';
+import PamelaParedesHernandezPage from './pages/PamelaParedesHernandezPage';
+import PremRamaniPage from './pages/PremRamaniPage';
+import RebeccaOConnerPage from './pages/RebeccaOConnerPage';
+import RhettFerrinPage from './pages/RhettFerrinPage';
+import SarahHallidayPage from './pages/SarahHallidayPage';
+import ShaileeRindaniPage from './pages/ShaileeRindaniPage';
+import ShaunaAroraPage from './pages/ShaunaAroraPage';
+import SilviaSandovalPage from './pages/SilviaSandovalPage';
+import StephanieRochPage from './pages/StephanieRochPage';
+import TrevorTuplinPage from './pages/TrevorTuplinPage';
+import WilliamsAbarcaPage from './pages/WilliamsAbarcaPage';
+import Extra1Page from './pages/Extra1Page';
+import Extra2Page from './pages/Extra2Page';
+import Extra3Page from './pages/Extra3Page';
+import Extra4Page from './pages/Extra4Page';
+import Extra5Page from './pages/Extra5Page';
+import Extra6Page from './pages/Extra6Page';
+import Extra7Page from './pages/Extra7Page';
+
+const AppLayout = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  // Array of team members
   const products = [
-    { icon: "🍭", name: "Artisan Lollipops", description: "Handcrafted with natural flavors and vibrant colors", price: "$3.99" },
-    { icon: "🍫", name: "Premium Chocolates", description: "Rich, creamy chocolates made from finest cocoa beans", price: "$12.99" },
-    { icon: "🍬", name: "Gourmet Gummies", description: "Soft, chewy, and bursting with real fruit flavors", price: "$6.99" },
-    { icon: "🧁", name: "Sweet Cupcakes", description: "Fluffy cupcakes topped with heavenly frosting", price: "$4.99" },
-    { icon: "🍩", name: "Glazed Donuts", description: "Fresh-baked donuts with sweet glaze", price: "$2.50" },
-    { icon: "🍪", name: "Chocolate Chip Cookies", description: "Warm, chewy cookies with premium chocolate chips", price: "$3.50" },
-    { icon: "🎂", name: "Birthday Cake Slices", description: "Decadent cake slices perfect for celebrations", price: "$5.99" },
-    { icon: "🍰", name: "Strawberry Shortcake", description: "Light sponge cake with fresh strawberries and cream", price: "$6.50" },
-    { icon: "🥧", name: "Apple Pie Bites", description: "Mini apple pies with cinnamon and spice", price: "$4.25" },
-    { icon: "🍮", name: "Crème Brûlée", description: "Silky custard with caramelized sugar top", price: "$7.99" },
-    { icon: "🍯", name: "Honey Sticks", description: "Pure wildflower honey in convenient sticks", price: "$1.99" },
-    { icon: "🧈", name: "Butter Toffee", description: "Rich, buttery toffee with almond pieces", price: "$8.99" },
-    { icon: "🥨", name: "Chocolate Pretzels", description: "Crunchy pretzels dipped in dark chocolate", price: "$5.25" },
-    { icon: "🍡", name: "Mochi Ice Cream", description: "Sweet rice dough filled with premium ice cream", price: "$4.75" },
-    { icon: "🍘", name: "Rice Candy", description: "Traditional Asian rice crackers with sweet coating", price: "$3.25" },
-    { icon: "🥜", name: "Candied Nuts", description: "Roasted nuts glazed with cinnamon sugar", price: "$6.75" },
-    { icon: "🍓", name: "Chocolate Strawberries", description: "Fresh strawberries dipped in premium chocolate", price: "$9.99" },
-    { icon: "🍒", name: "Cherry Cordials", description: "Dark chocolate shells filled with cherry liqueur", price: "$11.99" },
-    { icon: "🥥", name: "Coconut Macaroons", description: "Sweet coconut cookies dipped in chocolate", price: "$4.50" },
-    { icon: "🍋", name: "Lemon Drops", description: "Tangy lemon hard candies with sugar coating", price: "$2.99" },
-    { icon: "🍊", name: "Orange Creamsicle Bars", description: "Creamy orange-flavored frozen treats", price: "$3.75" },
-    { icon: "🍇", name: "Grape Gummy Clusters", description: "Realistic grape-shaped gummy candies", price: "$5.50" },
-    { icon: "🍑", name: "Cherry Gum Balls", description: "Classic red cherry-flavored gumballs", price: "$0.25" },
-    { icon: "🍌", name: "Banana Taffy", description: "Chewy banana-flavored salt water taffy", price: "$4.99" },
-    { icon: "🥭", name: "Mango Jellies", description: "Tropical mango-flavored jelly candies", price: "$6.25" },
-    { icon: "🍍", name: "Pineapple Rings", description: "Dried pineapple rings dusted with sugar", price: "$7.50" },
-    { icon: "🥤", name: "Soda Pop Rocks", description: "Fizzy candy that pops in your mouth", price: "$1.75" },
-    { icon: "☕", name: "Coffee Caramels", description: "Rich caramels infused with espresso", price: "$8.25" },
-    { icon: "🍵", name: "Green Tea Chocolates", description: "Delicate matcha-flavored white chocolates", price: "$10.99" },
-    { icon: "🎭", name: "Mystery Mix", description: "Assorted surprise candies - you never know what you'll get!", price: "$12.50" }
+    { icon: "🍭", name: "Alex Goot", description: "Sweet Treats Specialist" },
+    { icon: "🍫", name: "Alicia Jones", description: "Sweet Treats Specialist" },
+    { icon: "🍬", name: "Amy Wilde", description: "Sweet Treats Specialist" },
+    { icon: "🧁", name: "Andriana Skaperdas", description: "Sweet Treats Specialist" },
+    { icon: "🍩", name: "Angela Shen", description: "Sweet Treats Specialist" },
+    { icon: "🍪", name: "Anna Kozlova", description: "Sweet Treats Specialist" },
+    { icon: "🎂", name: "Ariel Finno", description: "Sweet Treats Specialist" },
+    { icon: "🍰", name: "Bernice Meja", description: "Sweet Treats Specialist" },
+    { icon: "🥧", name: "Bobby Nguyen", description: "Sweet Treats Specialist" },
+    { icon: "🍮", name: "Chelsea Jones", description: "Sweet Treats Specialist" },
+    { icon: "🍯", name: "Dave Devine", description: "Sweet Treats Specialist" },
+    { icon: "🎂", name: "Emily Firgens", description: "Sweet Treats Specialist" },
+    { icon: "🍰", name: "Emily Kohler", description: "Sweet Treats Specialist" },
+    { icon: "🥧", name: "Emily Peterson", description: "Sweet Treats Specialist" },
+    { icon: "🍩", name: "Hank Thornhill", description: "Sweet Treats Specialist" },
+    { icon: "🍪", name: "Ian McDiarmid", description: "Sweet Treats Specialist" },
+    { icon: "🍓", name: "Jeffrey Prater", description: "Sweet Treats Specialist" },
+    { icon: "🍒", name: "Jen Ware", description: "Sweet Treats Specialist" },
+    { icon: "🍮", name: "Jenna Ray", description: "Sweet Treats Specialist" },
+    { icon: "🍋", name: "John Karayel", description: "Sweet Treats Specialist" },
+    { icon: "🍊", name: "Jose Anderson", description: "Sweet Treats Specialist" },
+    { icon: "🍇", name: "Josias Jimenez", description: "Sweet Treats Specialist" },
+    { icon: "🍑", name: "Josh Amer", description: "Sweet Treats Specialist" },
+    { icon: "🍌", name: "Katie Krol", description: "Sweet Treats Specialist" },
+    { icon: "🥭", name: "Katie Leduc", description: "Sweet Treats Specialist" },
+    { icon: "🍍", name: "Katie Long", description: "Sweet Treats Specialist" },
+    { icon: "🍭", name: "Kristen Duke", description: "Sweet Treats Specialist" },
+    { icon: "🍫", name: "Malek El Hage", description: "Sweet Treats Specialist" },
+    { icon: "🧁", name: "Melissa Gorham", description: "Sweet Treats Specialist" },
+    { icon: "🍭", name: "Nicolas Padilla", description: "Sweet Treats Specialist" },
+    { icon: "🍫", name: "Pamela Paredes Hernandez", description: "Sweet Treats Specialist" },
+    { icon: "🍬", name: "Prem Ramani", description: "Sweet Treats Specialist" },
+    { icon: "🧁", name: "Rebecca O'Conner", description: "Sweet Treats Specialist" },
+    { icon: "🍩", name: "Rhett Ferrin", description: "Sweet Treats Specialist" },
+    { icon: "🍪", name: "Sarah Halliday", description: "Sweet Treats Specialist" },
+    { icon: "🎂", name: "Shailee Rindani", description: "Sweet Treats Specialist" },
+    { icon: "🍰", name: "Shauna Arora", description: "Sweet Treats Specialist" },
+    { icon: "🥧", name: "Silvia Sandoval", description: "Sweet Treats Specialist" },
+    { icon: "🍮", name: "Stephanie Roch", description: "Sweet Treats Specialist" },
+    { icon: "🍯", name: "Trevor Tuplin", description: "Sweet Treats Specialist" },
+    { icon: "🍬", name: "Williams Abarca", description: "Sweet Treats Specialist" },
+    { icon: "🍭", name: "Extra 1", description: "Sweet Treats Specialist" },
+    { icon: "🍫", name: "Extra 2", description: "Sweet Treats Specialist" },
+    { icon: "🍬", name: "Extra 3", description: "Sweet Treats Specialist" },
+    { icon: "🍓", name: "Extra 4", description: "Sweet Treats Specialist" },
+    { icon: "🍒", name: "Extra 5", description: "Sweet Treats Specialist" },
+    { icon: "🥥", name: "Extra 6", description: "Sweet Treats Specialist" },
+    { icon: "🍋", name: "Extra 7", description: "Sweet Treats Specialist" }
   ];
 
   return (
-    <Router>
-      <div className="App">
-        {/* Navigation Header */}
+    <div className="App">
+      {/* Navigation Header - only show on home page */}
+      {isHomePage && (
         <nav className="navbar">
           <div className="nav-container">
             <div className="nav-logo">
@@ -57,14 +128,63 @@ function App() {
             </ul>
           </div>
         </nav>
+      )}
 
-        {/* Routes */}
+      {/* Routes */}
         <Routes>
           <Route path="/" element={<Home products={products} />} />
-          <Route path="/sweet/:sweetName" element={<SweetPage products={products} />} />
+          <Route path="/sweet/alex-goot" element={<AlexGootPage />} />
+          <Route path="/sweet/alicia-jones" element={<AliciaJonesPage />} />
+          <Route path="/sweet/amy-wilde" element={<AmyWildePage />} />
+          <Route path="/sweet/andriana-skaperdas" element={<AndrianaSkaperdasPage />} />
+          <Route path="/sweet/angela-shen" element={<AngelaShenPage />} />
+          <Route path="/sweet/anna-kozlova" element={<AnnaKozlovaPage />} />
+          <Route path="/sweet/ariel-finno" element={<ArielFinnoPage />} />
+          <Route path="/sweet/bernice-meja" element={<BerniceMejaPage />} />
+          <Route path="/sweet/bobby-nguyen" element={<BobbyNguyenPage />} />
+          <Route path="/sweet/chelsea-jones" element={<ChelseaJonesPage />} />
+          <Route path="/sweet/dave-devine" element={<DaveDevinePage />} />
+          <Route path="/sweet/emily-firgens" element={<EmilyFirgensPage />} />
+          <Route path="/sweet/emily-kohler" element={<EmilyKohlerPage />} />
+          <Route path="/sweet/emily-peterson" element={<EmilyPetersonPage />} />
+          <Route path="/sweet/hank-thornhill" element={<HankThornhillPage />} />
+          <Route path="/sweet/ian-mcdiarmid" element={<IanMcDiarmidPage />} />
+          <Route path="/sweet/jeffrey-prater" element={<JeffreyPraterPage />} />
+          <Route path="/sweet/jen-ware" element={<JenWarePage />} />
+          <Route path="/sweet/jenna-ray" element={<JennaRayPage />} />
+          <Route path="/sweet/john-karayel" element={<JohnKarayelPage />} />
+          <Route path="/sweet/jose-anderson" element={<JoseAndersonPage />} />
+          <Route path="/sweet/josias-jimenez" element={<JosiasJimenezPage />} />
+          <Route path="/sweet/josh-amer" element={<JoshAmerPage />} />
+          <Route path="/sweet/katie-krol" element={<KatieKrolPage />} />
+          <Route path="/sweet/katie-leduc" element={<KatieLeducPage />} />
+          <Route path="/sweet/katie-long" element={<KatieLongPage />} />
+          <Route path="/sweet/kristen-duke" element={<KristenDukePage />} />
+          <Route path="/sweet/malek-el-hage" element={<MalekElHagePage />} />
+          <Route path="/sweet/melissa-gorham" element={<MelissaGorhamPage />} />
+          <Route path="/sweet/nicolas-padilla" element={<NicolasPadillaPage />} />
+          <Route path="/sweet/pamela-paredes-hernandez" element={<PamelaParedesHernandezPage />} />
+          <Route path="/sweet/prem-ramani" element={<PremRamaniPage />} />
+          <Route path="/sweet/rebecca-oconner" element={<RebeccaOConnerPage />} />
+          <Route path="/sweet/rhett-ferrin" element={<RhettFerrinPage />} />
+          <Route path="/sweet/sarah-halliday" element={<SarahHallidayPage />} />
+          <Route path="/sweet/shailee-rindani" element={<ShaileeRindaniPage />} />
+          <Route path="/sweet/shauna-arora" element={<ShaunaAroraPage />} />
+          <Route path="/sweet/silvia-sandoval" element={<SilviaSandovalPage />} />
+          <Route path="/sweet/stephanie-roch" element={<StephanieRochPage />} />
+          <Route path="/sweet/trevor-tuplin" element={<TrevorTuplinPage />} />
+          <Route path="/sweet/williams-abarca" element={<WilliamsAbarcaPage />} />
+          <Route path="/sweet/extra-1" element={<Extra1Page />} />
+          <Route path="/sweet/extra-2" element={<Extra2Page />} />
+          <Route path="/sweet/extra-3" element={<Extra3Page />} />
+          <Route path="/sweet/extra-4" element={<Extra4Page />} />
+          <Route path="/sweet/extra-5" element={<Extra5Page />} />
+          <Route path="/sweet/extra-6" element={<Extra6Page />} />
+          <Route path="/sweet/extra-7" element={<Extra7Page />} />
         </Routes>
 
-        {/* Footer */}
+      {/* Footer - only show on home page */}
+      {isHomePage && (
         <footer className="footer" id="contact">
           <div className="container">
             <div className="footer-content">
@@ -93,7 +213,15 @@ function App() {
             </div>
           </div>
         </footer>
-      </div>
+      )}
+    </div>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <AppLayout />
     </Router>
   );
 }

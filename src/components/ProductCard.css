@@ -1,3 +1,9 @@
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .product-card {
   background: white;
   padding: 1.5rem;
@@ -7,6 +13,7 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .product-card::before {

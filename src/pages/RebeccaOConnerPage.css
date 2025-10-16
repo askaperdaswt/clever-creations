@@ -1,0 +1,126 @@
+/* Rebecca O'Conner Page - Custom Styles */
+/* This file is isolated and won't affect other pages */
+
+.rebecca-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+/* Hero Section - Above the Fold */
+.rebecca-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.rebecca-hero-content {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  padding: 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.rebecca-hero-title {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  font-family: 'Georgia', serif;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.rebecca-hero-subtitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-style: italic;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1.4s ease-out;
+}
+
+/* Content Section */
+.rebecca-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.rebecca-section {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.rebecca-section h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #ff6b6b;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.rebecca-section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rebecca-hero-title {
+    font-size: 3rem;
+  }
+
+  .rebecca-hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .rebecca-section {
+    padding: 2rem;
+  }
+
+  .rebecca-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rebecca-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .rebecca-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .rebecca-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .rebecca-section p {
+    font-size: 1rem;
+  }
+}
+

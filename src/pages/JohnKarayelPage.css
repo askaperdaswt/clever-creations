@@ -1,0 +1,405 @@
+/* John Karayel Page - Isolated Styles */
+/* This file contains ONLY styles for JohnKarayelPage.js */
+/* Following collaboration rules: No global style modifications */
+
+.john-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 50%, #1e1e1e 100%);
+  color: #d4d4d4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.john-hero {
+  padding: 120px 2rem 60px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(45, 45, 48, 0.95));
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #3e3e42;
+}
+
+.john-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+  background-size: 30px 30px;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.john-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 3rem;
+  align-items: center;
+}
+
+.john-hero-text {
+  text-align: left;
+}
+
+.john-hero-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.john-photo-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(62, 62, 66, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.john-photo-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  border-color: rgba(78, 201, 176, 0.6);
+}
+
+.john-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.john-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(78, 201, 176, 0.2), rgba(86, 156, 214, 0.2));
+  color: #d4d4d4;
+  text-align: center;
+  padding: 1rem;
+}
+
+.john-photo-placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.john-photo-placeholder-text {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.john-hero h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: slideInUp 1s ease-out;
+}
+
+.john-hero .john-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #569cd6;
+  opacity: 0.9;
+  font-style: italic;
+  animation: slideInUp 1s ease-out 0.2s both;
+}
+
+.john-hero .john-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #d4d4d4;
+  opacity: 0.95;
+  animation: slideInUp 1s ease-out 0.4s both;
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.john-sections {
+  padding: 80px 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.john-section {
+  margin-bottom: 80px;
+  background: rgba(45, 45, 48, 0.8);
+  border-radius: 20px;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid #3e3e42;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.john-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #4ec9b0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.john-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #9cdcfe;
+}
+
+.john-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.john-skill-item {
+  background: rgba(30, 30, 30, 0.8);
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #3e3e42;
+}
+
+.john-skill-item:hover {
+  transform: translateY(-5px);
+  background: rgba(45, 45, 48, 0.9);
+  border-color: #4ec9b0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.john-skill-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.john-skill-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.john-skill-level {
+  background: rgba(62, 62, 66, 0.8);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.john-skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #4ec9b0, #569cd6);
+  border-radius: 4px;
+  transition: width 1s ease-out;
+}
+
+.john-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.john-project-card {
+  background: rgba(30, 30, 30, 0.8);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid #3e3e42;
+}
+
+.john-project-card:hover {
+  transform: translateY(-5px);
+  background: rgba(45, 45, 48, 0.9);
+  border-color: #4ec9b0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.john-project-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #4ec9b0;
+}
+
+.john-project-description {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.john-project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.john-tech-tag {
+  background: rgba(78, 201, 176, 0.2);
+  color: #4ec9b0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(78, 201, 176, 0.4);
+}
+
+.john-contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.john-contact-item {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(30, 30, 30, 0.8);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid #3e3e42;
+}
+
+.john-contact-item:hover {
+  transform: translateY(-5px);
+  background: rgba(45, 45, 48, 0.9);
+  border-color: #4ec9b0;
+}
+
+.john-contact-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.john-contact-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #4ec9b0;
+}
+
+.john-contact-value {
+  opacity: 0.9;
+}
+
+.john-contact-value a {
+  color: #9cdcfe;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.john-contact-value a:hover {
+  color: #4ec9b0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .john-hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .john-hero-text {
+    text-align: center;
+  }
+  
+  .john-photo-container {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+  }
+  
+  .john-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .john-hero .john-title {
+    font-size: 1.2rem;
+  }
+  
+  .john-hero .john-description {
+    font-size: 1rem;
+  }
+  
+  .john-sections {
+    padding: 60px 1rem;
+  }
+  
+  .john-section {
+    padding: 2rem;
+    margin-bottom: 60px;
+  }
+  
+  .john-section h2 {
+    font-size: 2rem;
+  }
+  
+  .john-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .john-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .john-contact-info {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .john-hero {
+    padding: 100px 1rem 40px;
+  }
+  
+  .john-photo-container {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .john-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .john-sections {
+    padding: 40px 1rem;
+  }
+  
+  .john-section {
+    padding: 1.5rem;
+  }
+  
+  .john-section h2 {
+    font-size: 1.8rem;
+  }
+}

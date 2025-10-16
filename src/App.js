@@ -45,8 +45,8 @@ import SilviaSandovalPage from './pages/SilviaSandovalPage';
 import StephanieRochPage from './pages/StephanieRochPage';
 import TrevorTuplinPage from './pages/TrevorTuplinPage';
 import WilliamsAbarcaPage from './pages/WilliamsAbarcaPage';
-import Extra1Page from './pages/Extra1Page';
-import Extra2Page from './pages/Extra2Page';
+import SarahNicolettiPage from './pages/SarahNicolettiPage';
+import MargoBulkaPage from './pages/MargoBulkaPage';
 import Extra3Page from './pages/Extra3Page';
 import Extra4Page from './pages/Extra4Page';
 import Extra5Page from './pages/Extra5Page';
@@ -100,8 +100,8 @@ const AppLayout = () => {
     { icon: "🍮", name: "Stephanie Roch", description: "Sweet Treats Specialist" },
     { icon: "🍯", name: "Trevor Tuplin", description: "Sweet Treats Specialist" },
     { icon: "🍬", name: "Williams Abarca", description: "Sweet Treats Specialist" },
-    { icon: "🍭", name: "Extra 1", description: "Sweet Treats Specialist" },
-    { icon: "🍫", name: "Extra 2", description: "Sweet Treats Specialist" },
+    { icon: "🍭", name: "Sarah Nicoletti", description: "Sweet Treats Specialist" },
+    { icon: "🍫", name: "Margo Bulka", description: "Sweet Treats Specialist" },
     { icon: "🍬", name: "Extra 3", description: "Sweet Treats Specialist" },
     { icon: "🍓", name: "Extra 4", description: "Sweet Treats Specialist" },
     { icon: "🍒", name: "Extra 5", description: "Sweet Treats Specialist" },
@@ -174,8 +174,8 @@ const AppLayout = () => {
           <Route path="/sweet/stephanie-roch" element={<StephanieRochPage />} />
           <Route path="/sweet/trevor-tuplin" element={<TrevorTuplinPage />} />
           <Route path="/sweet/williams-abarca" element={<WilliamsAbarcaPage />} />
-          <Route path="/sweet/extra-1" element={<Extra1Page />} />
-          <Route path="/sweet/extra-2" element={<Extra2Page />} />
+          <Route path="/sweet/sarah-nicoletti" element={<SarahNicolettiPage />} />
+          <Route path="/sweet/margo-bulka" element={<MargoBulkaPage />} />
           <Route path="/sweet/extra-3" element={<Extra3Page />} />
           <Route path="/sweet/extra-4" element={<Extra4Page />} />
           <Route path="/sweet/extra-5" element={<Extra5Page />} />

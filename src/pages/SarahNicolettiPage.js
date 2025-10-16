@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Extra2Page = () => {
+const SarahNicolettiPage = () => {
   return (
     <div className="App">
       <nav className="navbar">
@@ -14,10 +14,10 @@ const Extra2Page = () => {
         </div>
       </nav>
       <div style={{ padding: '2rem', paddingTop: '6rem' }}>
-        <h1>Extra 2</h1>
+        <h1>Sarah Nicoletti</h1>
       </div>
     </div>
   );
 };
 
-export default Extra2Page;
+export default SarahNicolettiPage;

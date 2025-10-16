@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Extra1Page = () => {
+const MargoBulkaPage = () => {
   return (
     <div className="App">
       <nav className="navbar">
@@ -14,10 +14,10 @@ const Extra1Page = () => {
         </div>
       </nav>
       <div style={{ padding: '2rem', paddingTop: '6rem' }}>
-        <h1>Extra 1</h1>
+        <h1>Margo Bulka</h1>
       </div>
     </div>
   );
 };
 
-export default Extra1Page;
+export default MargoBulkaPage;

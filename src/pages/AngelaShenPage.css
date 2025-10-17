@@ -1,0 +1,448 @@
+.angela-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff7fb 0%, #ffeaf3 40%, #fff 80%);
+  color: #222;
+}
+
+.angela-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(1200px 600px at -10% -10%, rgba(255,192,203,0.22), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(255,170,200,0.20), transparent 60%),
+    radial-gradient(1000px 600px at 50% 110%, rgba(255,210,230,0.22), transparent 60%);
+  pointer-events: none;
+}
+
+/* Sprinkle confetti animation */
+.angela-bg::before,
+.angela-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  mix-blend-mode: normal;
+  opacity: 0.35;
+  animation: sprinkles-drift 24s linear infinite;
+}
+
+.angela-bg::before {
+  background-image:
+    radial-gradient(circle, #ff9fb8 2px, transparent 2px),
+    radial-gradient(circle, #ffd1a8 2px, transparent 2px),
+    radial-gradient(circle, #b3e5ff 2px, transparent 2px),
+    radial-gradient(circle, #c8f7c5 2px, transparent 2px);
+  background-size: 22px 22px, 30px 30px, 26px 26px, 24px 24px;
+  background-position: 0 0, 8px 6px, 4px 10px, 12px 2px;
+}
+
+.angela-bg::after {
+  opacity: 0.25;
+  animation-duration: 36s;
+  background-image:
+    radial-gradient(circle, #f7b6c9 2px, transparent 2px),
+    radial-gradient(circle, #c7f0ff 2px, transparent 2px),
+    radial-gradient(circle, #fbe7a1 2px, transparent 2px);
+  background-size: 26px 26px, 32px 32px, 28px 28px;
+  background-position: 12px 8px, 2px 14px, 16px 4px;
+}
+
+@keyframes sprinkles-drift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-200px); }
+}
+
+.angela-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #eee;
+}
+
+.angela-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.angela-backlink {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+.angela-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 16px 64px;
+}
+
+.angela-title {
+  font-size: 40px;
+  margin: 0 0 12px;
+}
+
+.angela-subtitle {
+  margin: 0 0 24px;
+  color: #666;
+}
+
+.angela-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.angela-card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fafafa;
+}
+
+.angela-card h3 {
+  margin: 0 0 8px;
+}
+
+.angela-taglist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.angela-tag {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+/* Donut theme additions */
+.angela-hero {
+  background: #fff7f9;
+  border: 1px solid #ffe5ec;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  margin-bottom: 28px;
+}
+
+.angela-hero-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.angela-hero-text {
+  padding-right: 8px;
+}
+
+.angela-cta-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.angela-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.angela-btn:focus {
+  outline: 3px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.angela-btn-primary {
+  background: #ff7aa2;
+  color: #fff;
+  border-color: #ff7aa2;
+}
+
+.angela-btn-primary:hover {
+  filter: brightness(0.95);
+}
+
+.angela-btn-secondary {
+  background: #fff;
+  color: #7a2443;
+  border-color: #f7b6c9;
+}
+
+.angela-btn-secondary:hover {
+  background: #fff0f5;
+}
+
+.angela-btn-tertiary {
+  background: #fff;
+  color: #4b3b34;
+  border-color: #e8d9cf;
+}
+
+.angela-btn-tertiary:hover {
+  background: #fcf7f3;
+}
+
+.angela-hero-art {
+  display: grid;
+  place-items: center;
+}
+
+.angela-donut-stack {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 55% 40%, #ffb8cc 0 40%, transparent 41%),
+              radial-gradient(circle at 50% 50%, #fff 0 18%, transparent 19%),
+              radial-gradient(circle at 50% 50%, #ff85a2 0 45%, #ff6f94 46% 100%);
+  box-shadow: inset 0 4px 10px rgba(255,255,255,0.8), 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.angela-sprinkles {
+  height: 12px;
+  margin: 28px 0;
+  background-image:
+    radial-gradient(circle, #ff9fb8 2px, transparent 2px),
+    radial-gradient(circle, #ffd1a8 2px, transparent 2px),
+    radial-gradient(circle, #b3e5ff 2px, transparent 2px),
+    radial-gradient(circle, #c8f7c5 2px, transparent 2px);
+  background-size: 20px 20px, 28px 28px, 24px 24px, 22px 22px;
+  background-position: 0 0, 8px 6px, 4px 10px, 12px 2px;
+  background-repeat: repeat;
+  opacity: 0.6;
+}
+
+.angela-section {
+  margin: 28px 0;
+}
+
+.angela-two-col {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+}
+
+.angela-h2 {
+  font-size: 28px;
+  margin: 0 0 12px;
+}
+
+.angela-quote {
+  align-self: start;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #ffe5ec;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+  font-style: italic;
+}
+
+.angela-list {
+  padding-left: 18px;
+}
+
+.angela-tagline {
+  margin-top: 8px;
+  color: #7a2443;
+  font-weight: 600;
+}
+
+.angela-h3 {
+  margin: 0 0 8px;
+}
+
+/* Recommendations */
+.angela-section-intro {
+  color: #5b4a45;
+  margin: 0 0 16px;
+}
+
+.angela-recos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.angela-reco-card {
+  position: relative;
+  background: #fffafc;
+  border: 1px solid #ffe5ec;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.angela-reco-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+}
+
+.angela-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff7aa2;
+  color: #fff;
+  border-radius: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Donut icon chips */
+.angela-donut {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  box-shadow: inset 0 3px 6px rgba(255,255,255,0.7), 0 4px 10px rgba(0,0,0,0.08);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.angela-donut-glazed {
+  background-image: radial-gradient(circle at 52% 45%, #ffd9e4 0 44%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #fff 0 24%, transparent 25%),
+    radial-gradient(circle at 50% 50%, #ff8fb0 0 48%, #ff7aa2 49% 100%);
+}
+
+.angela-donut-maple {
+  background-image: radial-gradient(circle at 52% 45%, #ffe8c7 0 44%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #fff 0 24%, transparent 25%),
+    radial-gradient(circle at 50% 50%, #e5a65b 0 48%, #d48834 49% 100%);
+}
+
+.angela-donut-cinnamon {
+  background-image: radial-gradient(circle at 52% 45%, #ffe0cc 0 44%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #fff 0 24%, transparent 25%),
+    radial-gradient(circle at 50% 50%, #c27a40 0 48%, #a86128 49% 100%);
+}
+
+.angela-donut-berry {
+  background-image: radial-gradient(circle at 52% 45%, #ffd8ef 0 44%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #fff 0 24%, transparent 25%),
+    radial-gradient(circle at 50% 50%, #d05ea3 0 48%, #b8438a 49% 100%);
+}
+
+.angela-donut-choco {
+  background-image: radial-gradient(circle at 52% 45%, #e9d6cc 0 44%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #fff 0 24%, transparent 25%),
+    radial-gradient(circle at 50% 50%, #6b3f29 0 48%, #4a2a1a 49% 100%);
+}
+
+.angela-donut-cereal {
+  position: relative;
+  background-image: radial-gradient(circle at 52% 45%, #fff7cc 0 44%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #fff 0 24%, transparent 25%),
+    radial-gradient(circle at 50% 50%, #f3c954 0 48%, #e6b836 49% 100%);
+}
+
+.angela-donut-sprinkle {
+  position: relative;
+  background-image: radial-gradient(circle at 52% 45%, #fff7fe 0 44%, transparent 45%),
+    radial-gradient(circle at 50% 50%, #fff 0 24%, transparent 25%),
+    radial-gradient(circle at 50% 50%, #eec6ff 0 48%, #d7a6ff 49% 100%);
+}
+
+.angela-footer-cta {
+  margin-top: 36px;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.angela-social {
+  display: flex;
+  gap: 12px;
+}
+
+.angela-social-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid #e8d9cf;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #4b3b34;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .angela-hero-inner, .angela-two-col {
+    grid-template-columns: 1fr;
+  }
+  .angela-hero-text {
+    padding-right: 0;
+  }
+  .angela-donut-stack {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Donut of the Month */
+.angela-month-banner {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 16px;
+  align-items: center;
+  background: #fff8f0;
+  border: 1px solid #f6e3d6;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+}
+
+.angela-month-image-wrapper {
+  position: relative;
+}
+
+.angela-month-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.angela-month-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #d97706; /* amber-600 */
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.angela-month-content p {
+  margin: 8px 0 12px;
+}
+
+.angela-flavor-notes li::marker {
+  color: #d97706;
+}
+
+@media (max-width: 900px) {
+  .angela-month-banner {
+    grid-template-columns: 1fr;
+  }
+}
+
+

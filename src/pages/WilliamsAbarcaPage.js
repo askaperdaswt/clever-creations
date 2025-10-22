@@ -112,6 +112,31 @@ const WilliamsAbarcaPage = () => {
             </div>
           </div>
 
+          {/* Chess Game Card */}
+          <div className="williams-card williams-full-width">
+            <div className="williams-card-header">
+              <span className="williams-card-icon">♟️</span>
+              <h2 className="williams-card-title">Play Chess with Me!</h2>
+            </div>
+            <div className="williams-card-content">
+              <p style={{ textAlign: 'center', marginBottom: '1rem' }}>
+                Challenge yourself with a quick game of chess. Ready to make your move?
+              </p>
+              <div className="williams-chess-container">
+                <iframe
+                  src="https://lichess.org/training/frame?theme=brown&bg=dark"
+                  title="Chess Puzzle"
+                  className="williams-chess-frame"
+                  allowTransparency="true"
+                  frameBorder="0"
+                ></iframe>
+              </div>
+              <p style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.9rem', color: '#888' }}>
+                🎯 Interactive chess puzzles powered by <a href="https://lichess.org" target="_blank" rel="noopener noreferrer" style={{ color: '#667eea', textDecoration: 'none', fontWeight: 'bold' }}>Lichess</a>
+              </p>
+            </div>
+          </div>
+
           {/* Contact Card */}
           <div className="williams-card williams-full-width">
             <div className="williams-card-header">

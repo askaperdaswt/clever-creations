@@ -1,0 +1,478 @@
+/* Pamela Paredes Hernandez Page - Isolated Styles */
+/* This file contains styles specific to Pamela's page only */
+
+.pamela-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffc3d1 0%, #ffb3c6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.pamela-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="60" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>') repeat;
+  background-size: 80px 80px;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+.pamela-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  padding-top: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pamela-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: slideInUp 1s ease-out;
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pamela-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #2d3436;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(45deg, #2d3436, #636e72, #74b9ff, #0984e3);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.pamela-subtitle {
+  font-size: 1.5rem;
+  color: #2d3436;
+  margin-bottom: 2rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.pamela-description {
+  font-size: 1.2rem;
+  color: #2d3436;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.pamela-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.pamela-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  animation: slideInUp 1s ease-out;
+}
+
+.pamela-card:nth-child(2) { animation-delay: 0.2s; }
+.pamela-card:nth-child(3) { animation-delay: 0.4s; }
+.pamela-card:nth-child(4) { animation-delay: 0.6s; }
+
+.pamela-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.pamela-card h3 {
+  color: #feca57;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pamela-card p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.pamela-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pamela-card li {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.pamela-card li::before {
+  content: '✨';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.pamela-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pamela-skill {
+  background: linear-gradient(45deg, #ffb3c6, #feca57);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.pamela-skill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pamela-contact {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: slideInUp 1s ease-out 0.8s both;
+}
+
+.pamela-contact h3 {
+  color: #feca57;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.pamela-contact p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pamela-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pamela-link {
+  background: linear-gradient(45deg, #ffb3c6, #ffa8c5);
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pamela-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #ffa8c5, #ffb3c6);
+}
+
+/* Salvadoran Candies Individual Sections */
+.pamela-candy-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pamela-candy-section {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 2.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  animation: slideInUp 1s ease-out;
+}
+
+.pamela-candy-section:nth-child(1) { animation-delay: 0.1s; }
+.pamela-candy-section:nth-child(2) { animation-delay: 0.2s; }
+.pamela-candy-section:nth-child(3) { animation-delay: 0.3s; }
+.pamela-candy-section:nth-child(4) { animation-delay: 0.4s; }
+.pamela-candy-section:nth-child(5) { animation-delay: 0.5s; }
+
+.pamela-candy-section:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.pamela-candy-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.pamela-candy-number {
+  background: linear-gradient(45deg, #2d3436, #636e72);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pamela-candy-title {
+  color: #2d3436;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.pamela-candy-content {
+  color: #2d3436;
+}
+
+.pamela-candy-description {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.pamela-fun-facts {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border-left: 4px solid #2d3436;
+}
+
+.pamela-fun-facts h4 {
+  color: #2d3436;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.pamela-fun-facts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pamela-fun-facts li {
+  color: #2d3436;
+  margin-bottom: 0.8rem;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.pamela-fun-facts li::before {
+  content: '✨';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+.pamela-joke {
+  background: linear-gradient(45deg, #ffb3c6, #ffa8c5);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pamela-joke h4 {
+  color: #2d3436;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pamela-joke p {
+  color: #2d3436;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.pamela-joke em {
+  font-style: italic;
+  font-weight: bold;
+  color: #636e72;
+}
+
+.pamela-footer-note {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  animation: slideInUp 1s ease-out 0.6s both;
+}
+
+.pamela-footer-note p {
+  color: #2d3436;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pamela-content {
+    padding: 1rem;
+    padding-top: 5rem;
+  }
+  
+  .pamela-title {
+    font-size: 2.5rem;
+  }
+  
+  .pamela-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .pamela-sections {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .pamela-card {
+    padding: 1.5rem;
+  }
+  
+  .pamela-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pamela-link {
+    width: 200px;
+    justify-content: center;
+  }
+  
+  .pamela-candy-sections {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .pamela-candy-section {
+    padding: 1.5rem;
+  }
+  
+  .pamela-candy-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .pamela-candy-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .pamela-candy-title {
+    font-size: 2rem;
+  }
+  
+  .pamela-candy-description {
+    font-size: 1.1rem;
+  }
+  
+  .pamela-fun-facts {
+    padding: 1rem;
+  }
+  
+  .pamela-fun-facts h4 {
+    font-size: 1.2rem;
+  }
+  
+  .pamela-fun-facts li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pamela-title {
+    font-size: 2rem;
+  }
+  
+  .pamela-candy-section {
+    padding: 1rem;
+  }
+  
+  .pamela-candy-title {
+    font-size: 1.8rem;
+  }
+  
+  .pamela-candy-description {
+    font-size: 1rem;
+  }
+  
+  .pamela-fun-facts h4 {
+    font-size: 1.1rem;
+  }
+  
+  .pamela-fun-facts li {
+    font-size: 0.9rem;
+  }
+}

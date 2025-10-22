@@ -76,6 +76,8 @@
 
 .product-card h3 {
   font-size: 1.3rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
   color: #2d3436;
   margin-bottom: 0.8rem;
 }

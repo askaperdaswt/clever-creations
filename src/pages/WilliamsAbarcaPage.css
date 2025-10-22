@@ -1,0 +1,367 @@
+/* Williams Abarca Personal Page - Isolated Styles */
+
+.williams-page {
+  min-height: 100vh;
+  /* Airport Theme - Real Aviation Photography */
+  background: 
+    /* Overlay to make content readable */
+    linear-gradient(
+      rgba(255, 255, 255, 0.88),
+      rgba(255, 255, 255, 0.88)
+    ),
+    /* Airport/Aviation background - using Unsplash airport images */
+    url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80') center/cover no-repeat;
+  background-attachment: fixed;
+  padding: 2rem 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  position: relative;
+}
+
+/* Airport runway stripe overlay effect */
+.williams-page::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    /* Subtle runway stripes pattern */
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 200, 0, 0.02) 40px,
+      rgba(255, 200, 0, 0.02) 50px,
+      transparent 50px,
+      transparent 90px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Airport location badge */
+.williams-page::before {
+  content: '✈️ Taking Off from San Salvador';
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(25, 118, 210, 0.95);
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  z-index: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.williams-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.williams-back-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.williams-back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.williams-hero {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.williams-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+}
+
+.williams-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.williams-name {
+  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.williams-title {
+  font-size: 1.5rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.williams-tagline {
+  font-size: 1.1rem;
+  color: #888;
+  font-style: italic;
+  margin: 0;
+}
+
+.williams-content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.williams-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.williams-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.williams-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.williams-card-icon {
+  font-size: 2.5rem;
+}
+
+.williams-card-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin: 0;
+  font-weight: 700;
+}
+
+.williams-card-content {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.williams-card-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.williams-card-content li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.williams-card-content li::before {
+  content: '✨';
+  position: absolute;
+  left: 0;
+}
+
+.williams-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.williams-skill-tag {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.williams-skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+}
+
+.williams-full-width {
+  grid-column: 1 / -1;
+}
+
+.williams-contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.williams-contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.williams-contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
+}
+
+.williams-fun-facts {
+  background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  display: inline-block;
+  margin: 0.5rem;
+  color: #2d3436;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(253, 203, 110, 0.3);
+}
+
+.williams-quote {
+  font-size: 1.3rem;
+  font-style: italic;
+  text-align: center;
+  color: #2c3e50;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  border-left: 5px solid #667eea;
+}
+
+.williams-chess-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: #312e2b;
+}
+
+.williams-chess-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .williams-name {
+    font-size: 2rem;
+  }
+
+  .williams-title {
+    font-size: 1.2rem;
+  }
+
+  .williams-icon {
+    font-size: 3.5rem;
+  }
+
+  .williams-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .williams-hero {
+    padding: 2rem;
+  }
+
+  .williams-contact-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .williams-contact-button {
+    justify-content: center;
+  }
+
+  .williams-card-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .williams-back-button,
+  .williams-contact-button {
+    display: none;
+  }
+
+  .williams-page {
+    background: white;
+  }
+
+  .williams-card,
+  .williams-hero {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
+

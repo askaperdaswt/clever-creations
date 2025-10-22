@@ -1,0 +1,68 @@
+.andriana-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Sunset gradient */
+  background: linear-gradient(180deg, #ff7e5f 0%, #feb47b 45%, #ffd86f 100%);
+}
+
+.andriana-content {
+  padding: 2rem;
+  padding-top: 6rem; /* account for fixed navbar spacing in this app */
+  max-width: 960px;
+  margin: 0 auto;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.andriana-content h1 {
+  margin-bottom: 1.5rem;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.55), rgba(255,255,255,0.15));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* When a real image is used later, ensure it fills the circle nicely */
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Candy image grid */
+.candy-section-title {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.candy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.candy-tile {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.candy-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+

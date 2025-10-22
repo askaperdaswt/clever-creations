@@ -8,13 +8,13 @@
 
 /* Hero Section - Above the Fold */
 .rebecca-hero {
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   background-attachment: fixed;
 }
 
@@ -182,7 +182,7 @@
 }
 
 .icon-title {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #2c3e50;
   margin: 0;
   font-weight: 600;
@@ -190,6 +190,43 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  white-space: nowrap;
+}
+
+/* Testimonials Section */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: right;
+  margin: 0;
 }
 
 /* Responsive for icons grid */
@@ -215,6 +252,11 @@
   
   .icon-title {
     font-size: 1.1rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 

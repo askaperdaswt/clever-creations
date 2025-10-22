@@ -24,10 +24,71 @@ const RebeccaOConnerPage = () => {
         }}
       >
         <div className="rebecca-hero-content">
-          <h1 className="rebecca-hero-title">Treats Típicos</h1>
-          <p className="rebecca-hero-subtitle">Authentic Sweet Treats from El Salvador</p>
+          <h1 className="rebecca-hero-title">Treats no tan típicos</h1>
+          <p className="rebecca-hero-subtitle">Postres de gringolandía y más allá, hechos en El Salvador 🇸🇻 🇺🇸 🌍</p>
         </div>
       </section>
+
+      {/* Clickable Icons Grid */}
+      <div className="rebecca-icons-container">
+        <div className="rebecca-icons-grid">
+          <div className="rebecca-icon-card" onClick={() => console.log('Item 1 clicked')}>
+            <div className="icon-image-placeholder">
+              <span>Photo</span>
+            </div>
+            <h3 className="icon-title">Treat 1 <span className="icon-emoji">🍪</span></h3>
+          </div>
+
+          <div className="rebecca-icon-card" onClick={() => console.log('Item 2 clicked')}>
+            <div className="icon-image-placeholder">
+              <span>Photo</span>
+            </div>
+            <h3 className="icon-title">Treat 2 <span className="icon-emoji">🍫</span></h3>
+          </div>
+
+          <div className="rebecca-icon-card" onClick={() => console.log('Item 3 clicked')}>
+            <div className="icon-image-placeholder">
+              <span>Photo</span>
+            </div>
+            <h3 className="icon-title">Treat 3 <span className="icon-emoji">🧁</span></h3>
+          </div>
+
+          <div className="rebecca-icon-card" onClick={() => console.log('Item 4 clicked')}>
+            <div className="icon-image-placeholder">
+              <span>Photo</span>
+            </div>
+            <h3 className="icon-title">Treat 4 <span className="icon-emoji">🍰</span></h3>
+          </div>
+
+          <div className="rebecca-icon-card" onClick={() => console.log('Item 5 clicked')}>
+            <div className="icon-image-placeholder">
+              <span>Photo</span>
+            </div>
+            <h3 className="icon-title">Treat 5 <span className="icon-emoji">🍩</span></h3>
+          </div>
+
+          <div className="rebecca-icon-card" onClick={() => console.log('Item 6 clicked')}>
+            <div className="icon-image-placeholder">
+              <span>Photo</span>
+            </div>
+            <h3 className="icon-title">Treat 6 <span className="icon-emoji">🍭</span></h3>
+          </div>
+
+          <div className="rebecca-icon-card" onClick={() => console.log('Item 7 clicked')}>
+            <div className="icon-image-placeholder">
+              <span>Photo</span>
+            </div>
+            <h3 className="icon-title">Treat 7 <span className="icon-emoji">🎂</span></h3>
+          </div>
+
+          <div className="rebecca-icon-card" onClick={() => console.log('Item 8 clicked')}>
+            <div className="icon-image-placeholder">
+              <span>Photo</span>
+            </div>
+            <h3 className="icon-title">Treat 8 <span className="icon-emoji">🥧</span></h3>
+          </div>
+        </div>
+      </div>
 
       {/* Content Section */}
       <div className="rebecca-content">

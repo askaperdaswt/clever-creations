@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './components/Home';
-import SweetPage from './components/SweetPage';
 
 // Import all person pages
 import AlexGootPage from './pages/AlexGootPage';
@@ -59,7 +58,7 @@ const AppLayout = () => {
 
   // Array of team members
   const products = [
-    { icon: "🍭", name: "Alex Goot", description: "Sweet Treats Specialist" },
+    { icon: "🥕🍰", name: "Alex Goot", description: "Sweet Treats Specialist" },
     { icon: "🍫", name: "Alicia Jones", description: "Sweet Treats Specialist" },
     { icon: "🍬", name: "Amy Wilde", description: "Sweet Treats Specialist" },
     { icon: "🧁", name: "Andriana Skaperdas", description: "Sweet Treats Specialist" },
